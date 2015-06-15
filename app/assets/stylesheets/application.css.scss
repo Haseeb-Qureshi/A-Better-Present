@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+}
+
+.dandelion-bg {
+  background-image: image-url("dandelion-bg.jpg");
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+  background-repeat: no-repeat;
+}
+
+div.card-box {
+  background: #FF99CC;
+  border-radius: 5px;
+  padding: 17px;
+  border-bottom: 3px solid #E68AB8;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px #666;
+
+}
+
+button.btn-present {
+  background: -webkit-linear-gradient(#FFB8DB, #FFA3D1); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFB8DB, #FFA3D1); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFB8DB, #FFA3D1); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FFB8DB, #FFA3D1); /* Standard syntax */
+  color: white;
+  text-shadow: 1px 1px 2px #666;
+}
+
+button.btn-present:hover {
+  color: #FFFF99;
+}

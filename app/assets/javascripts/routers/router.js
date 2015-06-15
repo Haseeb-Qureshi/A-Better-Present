@@ -15,7 +15,7 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = view;
     view.render();
-    this.$rootEl.html(view);
+    this.$rootEl.html(view.$el);
     return view;
   },
 
