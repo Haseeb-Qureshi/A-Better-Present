@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import 'slick';
+ @import 'slick-theme';
  @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 
 body {
@@ -39,6 +41,10 @@ main.dandelion-bg {
   background-repeat: no-repeat;
 }
 
+main.soft-bg {
+  background: #def;
+}
+
 div.card-box {
   background: #FF99CC;
   border-radius: 5px;
@@ -61,4 +67,10 @@ button.btn-present {
 
 button.btn-present:hover {
   color: #FFFF99;
+}
+
+div.slider-div {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  text-align: center;
 }
