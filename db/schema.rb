@@ -11,24 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615054106) do
+ActiveRecord::Schema.define(version: 20150615224142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "card_designs", force: :cascade do |t|
+    t.text     "path",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cards", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "design"
     t.string   "sender_name"
     t.string   "recipient_name"
     t.string   "pass"
     t.decimal  "amount"
     t.text     "message"
     t.datetime "paid_at"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "card_designs_id"
   end
 
+  add_index "cards", ["card_designs_id"], name: "index_cards_on_card_designs_id", using: :btree
   add_index "cards", ["user_id"], name: "index_cards_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
