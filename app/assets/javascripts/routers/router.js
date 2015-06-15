@@ -5,18 +5,29 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "home",
+    "options": "options",
   },
 
   home: function () {
     this._swapView(new ABetterPresent.Views.HomeView());
   },
 
+  options: function() {
+    this._swapView(new ABetterPresent.Views.OptionsView());
+  },
+
   _swapView: function (view) {
-    this._currentView && this._currentView.remove();
-    this._currentView = view;
-    view.render();
-    this.$rootEl.html(view.$el);
-    return view;
+    var that = this;
+    if (this.currentView) {
+        this.currentView.$el.fadeOut(1000, function() {
+          that.currentView.remove();
+          that.currentView = view;
+          that.$rootEl.html(view.render().$el.hide().fadeIn(1000));
+        });
+    } else {
+      that.currentView = view;
+      this.$rootEl.html(view.render().$el);
+    }
   },
 
 });

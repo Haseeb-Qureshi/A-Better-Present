@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
-//= require jquery.bgswitcher
 //= require composite_view
 //= require a_better_present
 //= require_tree ../templates

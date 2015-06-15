@@ -20,7 +20,17 @@ body {
   font-size: 16px;
 }
 
-.dandelion-bg {
+main {
+  padding: 90px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+main.dandelion-bg {
   background-image: image-url("dandelion-bg.jpg");
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover;    /* Mozilla*/

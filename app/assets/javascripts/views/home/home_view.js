@@ -1,22 +1,19 @@
 ABetterPresent.Views.HomeView = Backbone.View.extend({
   template: JST['home'],
+  tagName: "main",
+  className: "dandelion-bg",
 
   events: {
     "click button#give-gift": "transitionToOptions",
   },
 
   render: function () {
+    $('main').addClass('dandelion-bg');
     this.$el.html(this.template());
-    $.BgSwitcher({
-      images: ["assets/dandelion-bg.jpg"],
-      effect: "fade",
-    })
-    // $('#page-body').addClass("dandelion-bg");
     return this;
   },
 
   transitionToOptions: function () {
-    this.$el.fadeOut(1000);
-    $('#page-body').removeClass("dandelion-bg");
+    Backbone.history.navigate('options', { trigger: true })
   },
 });
