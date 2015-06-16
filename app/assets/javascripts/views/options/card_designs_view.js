@@ -1,9 +1,31 @@
-ABetterPresent.Views.CardDesignsView = Backbone.View.extend({
+ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
   template: JST['options/card_designs'],
   className: "col-md-5",
-  
+
+  initialize: function () {
+    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "add", this.addDesign)
+    this.collection.each(this.addDesign.bind(this));
+  },
+
   render: function () {
     this.$el.html(this.template());
+    this.attachSubviews();
+    this.makeItSlick();
+    return this;
+  },
+
+  addDesign: function (design) {
+    debugger
+    this.addSubview(".slider-nav", new ABetterPresent.Views.DesignItem({
+      model: design
+    }));
+    this.addSubview(".slider-for", new ABetterPresent.Views.DesignItem({
+      model: design
+    }));
+  },
+
+  makeItSlick: function () {
     this.$('.slider-for').slick({
      slidesToShow: 1,
      slidesToScroll: 1,
@@ -19,6 +41,5 @@ ABetterPresent.Views.CardDesignsView = Backbone.View.extend({
      centerMode: true,
      focusOnSelect: true
     });
-    return this;
   },
 });

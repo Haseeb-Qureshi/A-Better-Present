@@ -17,5 +17,6 @@
 
 class Card < ActiveRecord::Base
   belongs_to :user
+  belongs_to :card_design
   # add state machine
 end

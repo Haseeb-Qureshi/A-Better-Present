@@ -11,6 +11,15 @@ module Api
       end
     end
 
+    def show
+      @card = Card.find(params[:id])
+      if @card.user == current_user
+        render json: @card
+      else
+        render json: "Not authorized", status: 402
+      end
+    end
+
     def update
       @card = Card.find(params[:id])
       if @card.user == current_user && @card.update(card_params)

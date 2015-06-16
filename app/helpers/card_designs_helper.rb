@@ -1,0 +1,2 @@
+module CardDesignsHelper
+end
