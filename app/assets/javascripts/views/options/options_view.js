@@ -10,6 +10,11 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
       collection: designs,
       directLoad: options.directLoad
     }));
+
+    this.cardForm = new ABetterPresent.Views.CardOptionsForm({
+      model: new ABetterPresent.Models.Card()
+    });
+    this.addSubview("options-form", this.cardForm);
   },
 
   render: function () {

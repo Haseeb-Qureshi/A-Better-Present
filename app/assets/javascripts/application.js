@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.slick
+//= require serialize_json
 //= require twitter/bootstrap
 //= require underscore
 //= require backbone

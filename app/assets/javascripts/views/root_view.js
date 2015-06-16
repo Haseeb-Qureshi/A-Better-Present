@@ -2,7 +2,7 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
   template: JST['root'],
 
   initialize: function () {
-    window.TRANS_LENGTH = 1000;
+    window.TRANS_LENGTH = 900;
   },
 
   renderHome: function () {

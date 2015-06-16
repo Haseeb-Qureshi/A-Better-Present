@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'thin'
 
+gem 'serialize_json-rails'
 gem 'backbone-on-rails'
 gem 'twitter-bootstrap-rails'
 gem 'state_machine', require: 'state_machine/core'
