@@ -3,11 +3,12 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
   tagName: "main",
   className: "soft-bg",
 
-  initialize: function () {
+  initialize: function (options) {
     var designs = new ABetterPresent.Collections.CardDesigns();
     designs.fetch();
     this.addSubview(".container", new ABetterPresent.Views.CardDesignsView({
       collection: designs,
+      directLoad: options.directLoad
     }));
   },
 

@@ -2,51 +2,49 @@ ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
   template: JST['options/card_designs'],
   className: "col-md-5",
 
-  initialize: function () {
+  initialize: function (options) {
     window.CARD_VIEW = this;
     this.collection.each(this.addDesign.bind(this));
-    this.listenTo(this.collection, "sync reset", this.render);
-    this.listenTo(this.collection, "add", this.addDesign)
-    this.designCount = 0;
+    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "add", this.addDesign);
+    this.renderCount = 0;
+    this.loadWait = options.directLoad ? 0 : TRANS_LENGTH;
   },
 
   render: function () {
     this.$el.html(this.template());
     this.attachSubviews();
-    // // this.makeItSlick();
+    console.log("Rendering!");
+    if (this.renderCount > 0) {
+      window.setTimeout(this.makeItSlick.bind(this), this.loadWait);
+    }
+    this.renderCount++;
     return this;
   },
 
   addDesign: function (design) {
-    this.addSubview(".carousel-inner", new ABetterPresent.Views.DesignItem({
-      model: design,
-      active: true,
+    this.addSubview(".slider-for", new ABetterPresent.Views.DesignItem({
+      model: design
     }));
-    var $li = $("<li>").data("target", "#carousel").data("slide-to", this.designCount);
-    this.designCount === 0 && $li.addClass("active");
-    debugger
-    this.$("ol.carousel-indicators").append($li);
-    this.designCount++;
+    this.addSubview(".slider-nav", new ABetterPresent.Views.DesignItem({
+      model: design
+    }));
   },
 
-  // makeItSlick: function () {
-  //   window.setTimeout(function () {
-  //     this.$('.slider-for').slick({
-  //      lazyLoad: 'ondemand',
-  //      slidesToShow: 1,
-  //      slidesToScroll: 1,
-  //      arrows: false,
-  //      fade: true,
-  //      asNavFor: '.slider-nav'
-  //     });
-  //     this.$('.slider-nav').slick({
-  //      lazyLoad: 'ondemand',
-  //      slidesToShow: 3,
-  //      slidesToScroll: 1,
-  //      asNavFor: '.slider-for',
-  //      centerMode: true,
-  //      focusOnSelect: true
-  //     });
-  //   }.bind(this), 500);
-  // },
+  makeItSlick: function () {
+    this.$('.slider-for').slick({
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     arrows: false,
+     fade: true,
+     asNavFor: '.slider-nav'
+    });
+    this.$('.slider-nav').slick({
+     slidesToShow: 3,
+     slidesToScroll: 1,
+     asNavFor: '.slider-for',
+     centerMode: true,
+     focusOnSelect: true
+    });
+  },
 });

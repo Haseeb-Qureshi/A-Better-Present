@@ -2,7 +2,7 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
   template: JST['root'],
 
   initialize: function () {
-
+    window.TRANS_LENGTH = 1000;
   },
 
   renderHome: function () {
@@ -10,7 +10,8 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
   },
 
   renderOptions: function () {
-    this._swapView(new ABetterPresent.Views.OptionsView());
+    var directLoad = !this._currentView;
+    this._swapView(new ABetterPresent.Views.OptionsView({ directLoad: directLoad }));
   },
 
   render: function () {
@@ -20,14 +21,14 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
 
   _swapView: function (view) {
     var that = this;
-    if (this.currentView) {
-        this.currentView.$el.fadeOut(1000, function () {
-          that.currentView.remove();
-          that.currentView = view;
-          that.$el.html(view.render().$el.hide().fadeIn(1000));
+    if (this._currentView) {
+        this._currentView.$el.fadeOut(TRANS_LENGTH, function () {
+          that._currentView.remove();
+          that._currentView = view;
+          that.$el.html(view.render().$el.hide().fadeIn(TRANS_LENGTH));
         });
     } else {
-      that.currentView = view;
+      that._currentView = view;
       this.$el.html(view.render().$el);
     }
   },
