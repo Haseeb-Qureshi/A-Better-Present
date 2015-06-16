@@ -21,7 +21,7 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
   _swapView: function (view) {
     var that = this;
     if (this.currentView) {
-        this.currentView.$el.fadeOut(1000, function() {
+        this.currentView.$el.fadeOut(1000, function () {
           that.currentView.remove();
           that.currentView = view;
           that.$el.html(view.render().$el.hide().fadeIn(1000));
