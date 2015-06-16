@@ -1,6 +1,10 @@
 ABetterPresent.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
+    this.nav = new ABetterPresent.Views.Nav();
+    this.$rootEl.append(this.nav.render().$el);
+    this.rootView = new ABetterPresent.Views.RootView();
+    this.$rootEl.append(this.rootView.render().$el);
   },
 
   routes: {
@@ -9,10 +13,12 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
   },
 
   home: function () {
+    this.rootView.renderHome();
     this._swapView(new ABetterPresent.Views.HomeView());
   },
 
   options: function() {
+    this.rootView.renderOptions();
     this._swapView(new ABetterPresent.Views.OptionsView());
   },
 
