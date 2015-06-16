@@ -6,7 +6,7 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
   initialize: function (options) {
     var designs = new ABetterPresent.Collections.CardDesigns();
     designs.fetch();
-    this.addSubview(".container", new ABetterPresent.Views.CardDesignsView({
+    this.addSubview(".design-select", new ABetterPresent.Views.CardDesignsView({
       collection: designs,
       directLoad: options.directLoad
     }));
@@ -14,7 +14,7 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
     this.cardForm = new ABetterPresent.Views.CardOptionsForm({
       model: new ABetterPresent.Models.Card()
     });
-    this.addSubview("options-form", this.cardForm);
+    this.addSubview(".options-form", this.cardForm);
   },
 
   render: function () {
