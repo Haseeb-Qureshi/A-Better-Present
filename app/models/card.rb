@@ -18,5 +18,7 @@
 class Card < ActiveRecord::Base
   belongs_to :user
   belongs_to :card_design
+  has_many :charity_selections
+  has_many :charities, through: :charity_selections
   # add state machine
 end
