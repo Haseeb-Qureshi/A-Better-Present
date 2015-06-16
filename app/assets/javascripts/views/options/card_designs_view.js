@@ -14,10 +14,7 @@ ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template());
     this.attachSubviews();
-    console.log("Rendering!");
-    if (this.renderCount > 0) {
-      window.setTimeout(this.makeItSlick.bind(this), this.loadWait);
-    }
+    this.renderCount && setTimeout(this.makeItSlick.bind(this), this.loadWait);
     this.renderCount++;
     return this;
   },
@@ -35,9 +32,9 @@ ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
     this.$('.slider-for').slick({
      slidesToShow: 1,
      slidesToScroll: 1,
-     arrows: false,
+     dots: true,
      fade: true,
-     asNavFor: '.slider-nav'
+     asNavFor: '.slider-nav',
     });
     this.$('.slider-nav').slick({
      slidesToShow: 3,

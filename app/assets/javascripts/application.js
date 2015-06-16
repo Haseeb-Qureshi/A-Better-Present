@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery.slick
 //= require twitter/bootstrap
-//= require turbolinks
 //= require underscore
 //= require backbone
 //= require composite_view

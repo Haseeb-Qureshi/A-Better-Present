@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>ABetterPresent</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body id="page-body">
 <script>
-  window.CURRENT_USER = <%= current_user ? "#{current_user.email}" : "null" %>;
+  window.CURRENT_USER = <%= current_user ? "'#{current_user.email}'".html_safe : "null" %>;
 </script>
 <%= render "shared/header" %>
 
