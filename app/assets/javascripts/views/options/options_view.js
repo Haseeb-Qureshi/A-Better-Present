@@ -4,17 +4,24 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
   className: "soft-bg",
 
   initialize: function (options) {
+    this.addDesignView(options);
+    this.addCharityForm(options);
+  },
+
+  addDesignView: function (options) {
     var designs = new ABetterPresent.Collections.CardDesigns();
     designs.fetch();
     this.addSubview(".design-select", new ABetterPresent.Views.CardDesignsView({
       collection: designs,
       directLoad: options.directLoad
     }));
+  },
 
-    this.cardForm = new ABetterPresent.Views.CardOptionsForm({
+  addCharityForm: function (options) {
+    this.charityForm = new ABetterPresent.Views.CharityOptionsForm({
       model: new ABetterPresent.Models.Card()
     });
-    this.addSubview(".options-form", this.cardForm);
+    this.addSubview(".options-form", this.charityForm);
   },
 
   render: function () {
