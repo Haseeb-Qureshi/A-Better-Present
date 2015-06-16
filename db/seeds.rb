@@ -5,3 +5,27 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(
+  email: "dog@dog.com",
+  password: "dogdogdog",
+  password_confirmation: "dogdogdog",
+)
+
+Card.create(
+  user_id: 1,
+  sender_name: "Dog Doggy",
+  recipient_name: "Mommy",
+  pass: "Dog",
+  amount: 50,
+  message: "Thanks for everything Mom!",
+  paid_at: 2.hours.ago,
+  card_designs_id: 2,
+)
+
+charities = ["Giving What We Can", "The Life You Can Save", "Charity Science", "MIRI", "Future of Humanity Institute", "Animal Charity Evaluators", "The Humane League", "Against Malaria Foundation", "Schistosomiasis Control Initiative", "GiveDirectly"]
+
+charities.each { |charity| Charity.create(name: charity) }
+
+CharitySelection.create(card_id: 1, charity_id: 1)
+CharitySelection.create(card_id: 1, charity_id: 2)
+CharitySelection.create(card_id: 1, charity_id: 5)
