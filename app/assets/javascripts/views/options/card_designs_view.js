@@ -3,9 +3,9 @@ ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
   className: "col-md-5",
 
   initialize: function () {
+    this.collection.each(this.addDesign.bind(this));
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addDesign)
-    this.collection.each(this.addDesign.bind(this));
   },
 
   render: function () {
@@ -16,7 +16,6 @@ ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
   },
 
   addDesign: function (design) {
-    debugger
     this.addSubview(".slider-nav", new ABetterPresent.Views.DesignItem({
       model: design
     }));
