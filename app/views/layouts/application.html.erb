@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="page-body">
-
+<script>
+  window.CURRENT_USER = <%= current_user ? "#{current_user.email}" : "null" %>;
+</script>
 <%= render "shared/header" %>
 
 <div class="container">
