@@ -3,6 +3,9 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
 
   initialize: function () {
     window.TRANS_LENGTH = 900;
+    window.CurrentCard = new ABetterPresent.Models.Card();
+    window.Charities = new ABetterPresent.Collections.Charities();
+    Charities.fetch();
   },
 
   renderHome: function () {

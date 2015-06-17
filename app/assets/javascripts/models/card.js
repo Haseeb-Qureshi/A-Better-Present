@@ -1,5 +1,5 @@
 ABetterPresent.Models.Card = Backbone.Model.extend({
-  rootUrl: "/api/cards",
+  urlRoot: "/api/cards",
 
   constructor: function (options) {
     this.charities = new ABetterPresent.Collections.Charities();

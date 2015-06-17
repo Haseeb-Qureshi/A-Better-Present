@@ -18,8 +18,9 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
   },
 
   addCharityForm: function (options) {
-    this.charityForm = new ABetterPresent.Views.CharityOptionsForm({
-      model: new ABetterPresent.Models.Card()
+    this.charityForm = new ABetterPresent.Views.CharitiesForm({
+      model: CurrentCard,
+      collection: Charities
     });
     this.addSubview(".options-form", this.charityForm);
   },

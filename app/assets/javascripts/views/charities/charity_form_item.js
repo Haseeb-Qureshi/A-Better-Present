@@ -3,6 +3,7 @@ ABetterPresent.Views.CharityFormItem = Backbone.CompositeView.extend({
   className: "checkbox",
   initialize: function (options) {
     this.card = options.card;
+    this.render();
   },
 
   render: function () {
