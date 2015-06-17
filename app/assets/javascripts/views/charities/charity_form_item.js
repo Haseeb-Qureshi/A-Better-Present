@@ -4,6 +4,7 @@ ABetterPresent.Views.CharityFormItem = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.card = options.card;
     this.render();
+    this.listenTo(this.model, "sync", this.render);
   },
 
   render: function () {

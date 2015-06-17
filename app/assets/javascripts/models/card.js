@@ -3,13 +3,14 @@ ABetterPresent.Models.Card = Backbone.Model.extend({
 
   constructor: function (options) {
     this.charities = new ABetterPresent.Collections.Charities();
-    Backbone.Model.apply(this, arguments);
+    Backbone.Model.prototype.constructor.apply(this, arguments);
   },
 
   parse: function (response) {
     var that = this;
     if (response.charities) {
       this.charities.set(response.charities, { parse: true });
+      debugger
       delete response.charities;
     }
 

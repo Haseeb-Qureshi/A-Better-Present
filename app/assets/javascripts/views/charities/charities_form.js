@@ -8,12 +8,21 @@ ABetterPresent.Views.CharitiesForm = Backbone.CompositeView.extend({
     this.collection.each(this.addCharity.bind(this));
   },
 
+  events: {
+    "change input[type='checkbox']:checked": "updateCharities",
+  },
+
   addCharity: function (charity) {
     var charityItem = new ABetterPresent.Views.CharityFormItem({
       model: charity,
       card: CurrentCard,
     });
     this.addSubview(".charity-items", charityItem);
+  },
+
+  updateCharities: function () {
+    var data = this.$el.serializeJSON();
+    CurrentCard.set(CurrentCard.parse(data.card));
   },
 
   render: function () {
