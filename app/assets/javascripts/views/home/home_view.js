@@ -1,7 +1,7 @@
 ABetterPresent.Views.HomeView = Backbone.View.extend({
   template: JST['home'],
   tagName: "main",
-  className: "dandelion-bg",
+  className: "home-bg",
 
   events: {
     "click button#give-gift": "transitionToOptions",
