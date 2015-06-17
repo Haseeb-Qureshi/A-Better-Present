@@ -12,10 +12,11 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
   addDesignView: function (options) {
     var designs = new ABetterPresent.Collections.CardDesigns();
     designs.fetch();
-    this.addSubview(".design-select", new ABetterPresent.Views.CardDesignsView({
+    this.designView = new ABetterPresent.Views.CardDesignsView({
       collection: designs,
       directLoad: options.directLoad
-    }));
+    });
+    this.addSubview(".design-select", this.designView);
   },
 
   addCharityForm: function (options) {
@@ -27,7 +28,10 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
   },
 
   addFieldsForm: function (options) {
-
+    this.fieldsForm = new ABetterPresent.Views.FieldsForm({
+      model: CurrentCard,
+    });
+    this.addSubview(".fields-form", this.fieldsForm);
   },
 
   render: function () {
