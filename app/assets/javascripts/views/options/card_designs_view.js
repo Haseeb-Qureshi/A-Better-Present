@@ -1,6 +1,5 @@
 ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
   template: JST['options/card_designs'],
-  className: "col-md-5",
 
   initialize: function (options) {
     window.CARD_VIEW = this;

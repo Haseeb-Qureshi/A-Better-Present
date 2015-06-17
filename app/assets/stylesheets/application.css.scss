@@ -100,6 +100,16 @@ img.design-item {
 div.fields-form {
 }
 
+.input-group-addon
+{
+    background-color:#FFF;
+}
+
+.input-group .input-group-addon + .form-control
+{
+    border-left:none;
+}
+
 .voffset-2 { margin-top: -5px; }
 .voffset-1 { margin-top: -2px; }
 .voffset  { margin-top: 2px; }
