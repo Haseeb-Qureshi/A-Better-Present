@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   namespace :api do
     resources :cards, only: [:create, :update, :destroy]
     resources :card_designs, only: [:show, :index]
+    resources :charities, only: [:show, :index]
   end
 end

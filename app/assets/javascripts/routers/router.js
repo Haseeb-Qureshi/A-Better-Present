@@ -5,6 +5,8 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
     this.$rootEl.append(this.nav.render().$el);
     this.rootView = new ABetterPresent.Views.RootView();
     this.$rootEl.append(this.rootView.render().$el);
+
+    // listen for back button
     window.addEventListener('popstate', function(e) {
       Backbone.history.navigate(Backbone.history.getFragment(), { trigger: true });
     });
