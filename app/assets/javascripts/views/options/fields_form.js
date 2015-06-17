@@ -3,6 +3,10 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({ card: this.model }));
+    this.$('#amount').maskMoney({
+      prefix: "$",
+      affixesStay: false,
+    })
     return this;
   },
 });

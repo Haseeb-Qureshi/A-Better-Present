@@ -17,11 +17,18 @@
  @import 'slick-theme';
  @import url(http://fonts.googleapis.com/css?family=Muli);
 
+// global
+
 body {
   font-family: 'Muli', sans-serif;
   font-size: 16px;
   background: #87e0fd;
   height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-family: 'Muli', sans-serif;
 }
 
 main {
@@ -34,11 +41,29 @@ main {
   z-index: -1;
 }
 
+.voffset-2 { margin-top: -5px; }
+.voffset-1 { margin-top: -2px; }
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+
+// navbar
+
 nav.navbar-default {
   position: absolute;
   left: 0;
   right: 0;
 }
+
+// home page
 
 main.home-bg {
   background-image: image-url("bix-pink.jpg");
@@ -47,29 +72,6 @@ main.home-bg {
   -o-background-size: cover;      /* Opera*/
   background-size: cover;         /* Generic*/
   background-repeat: no-repeat;
-}
-
-main.soft-bg {
-  background: -webkit-linear-gradient(#87e0fd, #05abe0); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#87e0fd, #05abe0); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#87e0fd, #05abe0); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#87e0fd, #05abe0); /* Standard syntax */
-  position: fixed;
-  overflow: scroll;
-  height: 100%;
-  color: white;
-  text-shadow: 1px 1px 2px #666;
-}
-
-div.card-box {
-  background: #FF99CC;
-  border-radius: 5px;
-  padding: 17px;
-  border-bottom: 3px solid #E68AB8;
-  margin-bottom: 10px;
-  color: white;
-  text-shadow: 1px 1px 2px #666;
-
 }
 
 button.btn-present {
@@ -83,6 +85,30 @@ button.btn-present {
 
 button.btn-present:hover {
   color: #FFFF99;
+}
+
+div.card-box {
+  background: rgba(255, 153, 204, 0.65);
+  border-radius: 5px;
+  padding: 17px;
+  border-bottom: 3px solid #E68AB8;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px #666;
+}
+
+// options page
+
+main.soft-bg {
+  background: -webkit-linear-gradient(#87e0fd, #05abe0); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#87e0fd, #05abe0); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#87e0fd, #05abe0); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#87e0fd, #05abe0); /* Standard syntax */
+  position: fixed;
+  overflow: scroll;
+  height: 100%;
+  color: white;
+  text-shadow: 1px 1px 2px #666;
 }
 
 div.slider-div {
@@ -100,6 +126,10 @@ img.design-item {
 div.fields-form {
 }
 
+span.required {
+
+}
+
 .input-group-addon
 {
     background-color:#FFF;
@@ -109,16 +139,3 @@ div.fields-form {
 {
     border-left:none;
 }
-
-.voffset-2 { margin-top: -5px; }
-.voffset-1 { margin-top: -2px; }
-.voffset  { margin-top: 2px; }
-.voffset1 { margin-top: 5px; }
-.voffset2 { margin-top: 10px; }
-.voffset3 { margin-top: 15px; }
-.voffset4 { margin-top: 30px; }
-.voffset5 { margin-top: 40px; }
-.voffset6 { margin-top: 60px; }
-.voffset7 { margin-top: 80px; }
-.voffset8 { margin-top: 100px; }
-.voffset9 { margin-top: 150px; }
