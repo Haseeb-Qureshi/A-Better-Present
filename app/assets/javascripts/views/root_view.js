@@ -10,7 +10,7 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
   },
 
   renderOptions: function () {
-    var directLoad = !this._currentView;
+    var directLoad = !this._currentView; // variable delay to ensure carousel loads properly
     this._swapView(new ABetterPresent.Views.OptionsView({ directLoad: directLoad }));
   },
 
