@@ -10,7 +10,6 @@ ABetterPresent.Models.Card = Backbone.Model.extend({
     var that = this;
     if (response.charities) {
       this.charities.set(response.charities, { parse: true });
-      debugger
       delete response.charities;
     }
 
