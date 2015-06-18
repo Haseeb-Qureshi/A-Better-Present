@@ -1,5 +1,6 @@
 ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
   template: JST['options/fields_form'],
+  tagName: "form",
 
   render: function () {
     this.$el.html(this.template({ card: this.model, name: this.randomName() }));
@@ -40,7 +41,45 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
     ]);
   },
 
+  validateFrom: function () {
+    this.$el.validate({
+      rules: {
+        "card[from]": {
+          required: true,
+          minlength: 1,
+        },
+      },
+      tooltip_options: {
+        "card[from]": { placement: 'right' },
+      },
+    });
+  },
+
+  validateFor: function () {
+    this.$el.validate({
+      rules: {
+        "card[for]": {
+          required: true,
+          minlength: 1
+        },
+      },
+      tooltip_options: {
+        "card[for]": { placement: 'right' },
+      },
+    });
+  },
+
   validateAmount: function () {
-    $(document).tooltip();
+    this.$el.validate({
+      rules: {
+        "card[amount]": {
+          required: true,
+          min: 10
+        },
+      },
+      tooltip_options: {
+        "card[amount]": { placement: 'right' },
+      },
+    });
   },
 });
