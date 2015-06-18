@@ -38,6 +38,11 @@ ABetterPresent.Views.CharitiesForm = Backbone.CompositeView.extend({
     }
   },
 
+  serializeForm: function () {
+    var formData = this.$el.serializeJSON();
+    return formData ? formData.card : {};
+  },
+
   render: function () {
     this.$el.html(this.template({ card: this.card }));
     this.attachSubviews();

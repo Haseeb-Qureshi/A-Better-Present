@@ -7,6 +7,7 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
     this.addDesignView(options);
     this.addCharityForm(options);
     this.addFieldsForm(options);
+    this.addSubmitButton(options);
   },
 
   addDesignView: function (options) {
@@ -32,6 +33,9 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
       model: CurrentCard,
     });
     this.addSubview(".fields-form", this.fieldsForm);
+  },
+
+  addSubmitButton: function (options) {
   },
 
   render: function () {

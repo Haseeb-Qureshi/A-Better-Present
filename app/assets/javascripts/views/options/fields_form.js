@@ -44,6 +44,11 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
     this.$el.validate();
   },
 
+  serializeForm: function () {
+    var formData = this.$el.serializeJSON();
+    return formData ? formData.card : {};
+  },
+
   initializeForm: function () {
     var that = this;
     this.$el.validate({

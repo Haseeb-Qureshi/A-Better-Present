@@ -43,4 +43,8 @@ ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
      focusOnSelect: true
     });
   },
+
+  serializeForm: function () {
+    return { design_id: this.$('.slider-for').slick('slickCurrentSlide') };
+  },
 });
