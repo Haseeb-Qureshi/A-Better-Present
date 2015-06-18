@@ -18,7 +18,6 @@
     <ul class="nav navbar-nav navbar-right">
       <p class="navbar-text pull-right">
       <% if (CURRENT_USER) { %>
-        <li>Logged in as <strong><%= CURRENT_USER %></strong>.</li>
         <li><a href="users/edit" rel="nofollow" class="navbar-link">Edit Profile</a></li>
         <li><a href="users/sign_out" data-method="delete" rel="nofollow" class="navbar-link">Logout</a></li>
       <% } else { %>
