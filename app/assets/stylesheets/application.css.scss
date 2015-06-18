@@ -139,3 +139,17 @@ span.required {
 {
     border-left:none;
 }
+
+p.help-block small {
+  color: white;
+  font-size: 12px;
+}
+
+span.required {
+  color: yellow;
+  text-shadow: none;
+}
+
+span.charity-chooser {
+  color: yellow;
+}
