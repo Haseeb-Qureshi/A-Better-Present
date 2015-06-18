@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery.slick
 //= require jquery.maskMoney.min
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require serialize_json
 //= require twitter/bootstrap
 //= require underscore

@@ -20,6 +20,7 @@ gem 'backbone-on-rails'
 gem 'twitter-bootstrap-rails'
 gem 'state_machine', require: 'state_machine/core'
 gem 'backbone-validation-rails', git: 'git://github.com/zakusha/backbone-validation-rails.git'
+gem 'jquery-validation-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

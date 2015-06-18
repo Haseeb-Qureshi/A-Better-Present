@@ -10,6 +10,12 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
     return this;
   },
 
+  events: {
+    "blur input#for": "validateFor",
+    "blur input#from": "validateFrom",
+    "blur input#amount": "validateAmount",
+  },
+
   randomName: function () {
     return _.sample([
       "Winston Churchill",
@@ -32,5 +38,9 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
       "Bilbo Baggins",
       "What's-his-face",
     ]);
+  },
+
+  validateAmount: function () {
+    $(document).tooltip();
   },
 });
