@@ -56,6 +56,13 @@ main {
 .voffset9 { margin-top: 150px; }
 
 
+.btn-xl {
+    padding: 18px 28px;
+    width: 255px;
+    font-size: 22px;
+    border-radius: 8px;
+}
+
 // navbar
 
 nav.navbar-default {
@@ -163,11 +170,4 @@ span.charity-chooser {
 label.error {
   color: yellow;
   font-size: 13px;
-}
-
-.btn-xl {
-    padding: 18px 28px;
-    width: 255px;
-    font-size: 22px;
-    border-radius: 8px;
 }

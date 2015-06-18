@@ -16,25 +16,26 @@ ABetterPresent.Models.Card = Backbone.Model.extend({
   },
 
   validation: {
-    charities: {
-      number: function (charities) {
-        if (charities.length !== 3) {
-          return "You must choose 3 charities.";
-        }
+    charities: function (charities) {
+      if (!charities || charities.length !== 3) {
+        return "You must choose 3 charities.";
       }
     },
     amount: {
+      required: true,
       min: 10,
-      msg: "Sorry, it has to be at least $10."
-
     },
-    from: {
+    sender_name: {
+      required: true,
       minLength: 1,
-      msg: "You gotta enter in an actual name!"
     },
-    to: {
+    recipient_name: {
+      required: true,
       minLength: 1,
-      msg: "You gotta enter in an actual name!"
-    }
+    },
+    card_designs_id: {
+      required: true,
+      min: 0,
+    },
   }
 });

@@ -7,7 +7,10 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
     this.addDesignView(options);
     this.addCharityForm(options);
     this.addFieldsForm(options);
-    this.addSubmitButton(options);
+  },
+
+  events: {
+    "click button#next": "attemptSerialization",
   },
 
   addDesignView: function (options) {
@@ -35,7 +38,13 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
     this.addSubview(".fields-form", this.fieldsForm);
   },
 
-  addSubmitButton: function (options) {
+  attemptSerialization: function () {
+    this.eachSubview(function (subView) {
+      CurrentCard.set(subView.serializeForm());
+    });
+    CurrentCard.validate();
+    debugger
+    console.log(CurrentCard.isValid());
   },
 
   render: function () {

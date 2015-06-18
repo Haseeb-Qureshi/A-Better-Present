@@ -45,6 +45,6 @@ ABetterPresent.Views.CardDesignsView = Backbone.CompositeView.extend({
   },
 
   serializeForm: function () {
-    return { design_id: this.$('.slider-for').slick('slickCurrentSlide') };
+    return { card_designs_id: this.$('.slider-for').slick('slickCurrentSlide') };
   },
 });

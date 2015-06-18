@@ -1,7 +1,7 @@
 <label>
   <input type="checkbox"
-         name="card[charities][][name]"
-         value="<%= charity.get("name") %>"
+         name="card[charities][][id]"
+         value="<%= charity.id %>"
          <%= card.charities.where({ name: charity.get("name") }).length ? "checked" : "" %>
   >
   <%= charity.get("name") %>
