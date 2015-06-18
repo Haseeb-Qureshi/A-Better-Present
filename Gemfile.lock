@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/zakusha/backbone-validation-rails.git
+  revision: 6ac799f0730829eabeae28b3534fe520c4a8f154
+  specs:
+    backbone-validation-rails (0.9.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -210,6 +216,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   backbone-on-rails
+  backbone-validation-rails!
   better_errors
   binding_of_caller
   byebug

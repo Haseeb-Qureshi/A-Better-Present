@@ -18,6 +18,7 @@
 //= require twitter/bootstrap
 //= require underscore
 //= require backbone
+//= require backbone-validation
 //= require composite_view
 //= require a_better_present
 //= require_tree ../templates
