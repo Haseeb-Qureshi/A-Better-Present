@@ -7,8 +7,7 @@ ABetterPresent.Models.Card = Backbone.Model.extend({
   },
 
   parse: function (response) {
-    var that = this;
-    if (response.charities) {
+    if (response && response.charities) {
       this.charities.set(response.charities, { parse: true });
       delete response.charities;
     }

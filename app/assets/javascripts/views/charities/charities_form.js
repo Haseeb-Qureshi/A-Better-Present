@@ -9,7 +9,7 @@ ABetterPresent.Views.CharitiesForm = Backbone.CompositeView.extend({
   },
 
   events: {
-    "change input[type='checkbox']:checked": "updateCharities",
+    "change input[type='checkbox']": "updateCharities",
   },
 
   addCharity: function (charity) {
@@ -21,8 +21,21 @@ ABetterPresent.Views.CharitiesForm = Backbone.CompositeView.extend({
   },
 
   updateCharities: function () {
-    var data = this.$el.serializeJSON();
-    CurrentCard.set(CurrentCard.parse(data.card));
+    var cardData = this.$el.serializeJSON().card || { charities: [] };
+    this.updateCounter(cardData);
+    CurrentCard.set(CurrentCard.parse(cardData));
+  },
+
+  updateCounter: function (cardData) {
+    var count = cardData.charities.length;
+    if (count < 3) {
+      this.$('label.error').html("Please select " + (3 - count) +
+        " more charit" + ( count === 2 ? "y." : "ies."));
+    } else if (count > 3) {
+      this.$('label.error').html("You can only select 3 charities.");
+    } else {
+      this.$('label.error').empty();
+    }
   },
 
   render: function () {

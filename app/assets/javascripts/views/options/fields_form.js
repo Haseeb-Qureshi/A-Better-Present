@@ -3,7 +3,7 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
   tagName: "form",
 
   initialize: function () {
-    this.setValidations();
+    this.validateForm();
   },
 
   render: function () {
@@ -12,14 +12,8 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
       prefix: "$",
       affixesStay: false,
     });
-    this.initializeForm();
+    // this.initializeForm();
     return this;
-  },
-
-  events: {
-    "blur input#for": "validateFor",
-    "blur input#from": "validateFrom",
-    "blur input#amount": "validateAmount",
   },
 
   randomName: function () {
@@ -46,35 +40,8 @@ ABetterPresent.Views.FieldsForm = Backbone.CompositeView.extend({
     ]);
   },
 
-  setValidations: function () {
-    this.validateFrom();
-    this.validateFor();
-    this.validateAmount();
-  },
-
-  validateFrom: function () {
+  validateForm: function () {
     this.$el.validate();
-  },
-
-  validateFor: function () {
-    this.$el.validate({
-      rules: {
-        "card[for]": {
-          required: true,
-          minlength: 1,
-        },
-      },
-    });
-  },
-
-  validateAmount: function () {
-    this.$el.validate({
-      rules: {
-        "card[amount]": {
-          pattern: /\$?.*[1-9]\d\.\d{2}/,
-        },
-      },
-    });
   },
 
   initializeForm: function () {
