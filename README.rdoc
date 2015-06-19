@@ -4,6 +4,9 @@ Charity giftcard app.
 
 TODOS:
 
+* Redirect on compose page unless the model is valid so far!
+* Full card preview on redactor page
+* Implement preview of charity on charity selection page (mouseover)
 * More seed data (descriptions)
 * Image uploads?
 * User auth into Backbone
