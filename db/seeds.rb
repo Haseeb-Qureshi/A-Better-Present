@@ -41,3 +41,8 @@ charities.each { |charity| Charity.create(name: charity) }
 CharitySelection.create(card_id: 1, charity_id: 1)
 CharitySelection.create(card_id: 1, charity_id: 2)
 CharitySelection.create(card_id: 1, charity_id: 5)
+
+CardDesign.create(path: "assets/images/design1.jpg")
+CardDesign.create(path: "assets/images/design2.jpg")
+CardDesign.create(path: "assets/images/design3.jpg")
+CardDesign.create(path: "assets/images/design4.jpg")
