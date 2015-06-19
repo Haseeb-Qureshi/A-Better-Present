@@ -22,6 +22,18 @@ Card.create(
   card_designs_id: 2,
 )
 
+Card.create(
+  user_id: 1,
+  sender_name: "Bim Bam",
+  recipient_name: "Daddy",
+  pass: "Bim",
+  amount: 678,
+  message: "I feel so alive.",
+  paid_at: 8.hours.ago,
+  card_designs_id: 2,
+  slug: "CarBenchFactory"
+)
+
 charities = ["Giving What We Can", "The Life You Can Save", "Charity Science", "MIRI", "Future of Humanity Institute", "Animal Charity Evaluators", "The Humane League", "Against Malaria Foundation", "Schistosomiasis Control Initiative", "GiveDirectly"]
 
 charities.each { |charity| Charity.create(name: charity) }

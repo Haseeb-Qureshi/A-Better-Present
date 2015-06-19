@@ -1,6 +1,6 @@
 module Api
   class CardsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:slug]
 
     def create
       @card = current_user.cards.new(card_params)
@@ -53,6 +53,7 @@ module Api
         :pass,
         :amount,
         :message,
+        :charities,
       )
     end
   end
