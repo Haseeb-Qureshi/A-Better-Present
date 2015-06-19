@@ -19,6 +19,7 @@
 //= require jquery.validate.additional-methods
 //= require serialize_json
 //= require twitter/bootstrap
+//= require redactor-rails
 //= require underscore
 //= require backbone
 //= require backbone-validation

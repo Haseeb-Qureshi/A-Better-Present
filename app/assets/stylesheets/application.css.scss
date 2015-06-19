@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require jquery-ui
+ *= require redactor-rails
  */
  @import 'slick';
  @import 'slick-theme';
@@ -170,4 +171,10 @@ span.charity-chooser {
 label.error {
   color: yellow;
   font-size: 13px;
+}
+
+// compose
+
+div.redactor-box {
+  top: 120px;
 }
