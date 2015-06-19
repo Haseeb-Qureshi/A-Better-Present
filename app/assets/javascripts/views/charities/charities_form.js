@@ -43,6 +43,10 @@ ABetterPresent.Views.CharitiesForm = Backbone.CompositeView.extend({
     return formData ? formData.card : {};
   },
 
+  triggerErrors: function () {
+    this.updateCharities();
+  },
+
   render: function () {
     this.$el.html(this.template({ card: this.card }));
     this.attachSubviews();

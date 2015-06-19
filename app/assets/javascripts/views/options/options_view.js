@@ -43,8 +43,11 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
       CurrentCard.set(subView.serializeForm());
     });
     CurrentCard.validate();
-    debugger
-    console.log(CurrentCard.isValid());
+    if (CurrentCard.isValid()) {
+      Backbone.history.navigate("compose", { trigger: true });
+    } else {
+      this.eachSubview(function (subview) { subview.triggerErrors(); });
+    }
   },
 
   render: function () {
