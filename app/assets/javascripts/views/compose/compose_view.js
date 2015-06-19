@@ -13,6 +13,7 @@ ABetterPresent.Views.ComposeView = Backbone.CompositeView.extend({
   },
 
   goToNext: function () {
+    CurrentCard.set("message", this.$('#redactor').redactor('code.get'));
     Backbone.history.navigate("payment", { trigger: true });
   },
 });

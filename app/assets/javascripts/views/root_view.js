@@ -23,7 +23,11 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
   },
 
   renderPayment: function () {
-    this._swapView(new ABetterPresent.Views.HomeView());
+    this._swapView(new ABetterPresent.Views.PaymentView());
+  },
+
+  renderSuccess: function () {
+
   },
 
   render: function () {
