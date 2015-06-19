@@ -171,6 +171,11 @@ span.charity-chooser {
 label.error {
   color: yellow;
   font-size: 13px;
+  position: absolute;
+}
+
+div.button-wrapper {
+  position: absolute;
 }
 
 // compose

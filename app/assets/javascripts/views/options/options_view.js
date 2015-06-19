@@ -47,6 +47,7 @@ ABetterPresent.Views.OptionsView = Backbone.CompositeView.extend({
       Backbone.history.navigate("compose", { trigger: true });
     } else {
       this.eachSubview(function (subview) { subview.triggerErrors(); });
+      this.$('.button-wrapper').effect("shake");
     }
   },
 
