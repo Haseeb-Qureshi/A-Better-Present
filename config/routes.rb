@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :cards, only: [:create, :update, :destroy]
     resources :card_designs, only: [:show, :index]
     resources :charities, only: [:show, :index]
+    get "slugtest/:id" => "cards#slug"
   end
 end
