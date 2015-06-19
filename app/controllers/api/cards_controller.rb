@@ -12,9 +12,9 @@ module Api
     end
 
     def show
-      @card = Card.find(params[:id])
+      @card = Card.where(id: params[:id]).includes(:charities).first
       if @card.user == current_user
-        render json: @card.includes(:charities)
+        render json: @card
       else
         render json: "Not authorized", status: 402
       end
@@ -40,7 +40,7 @@ module Api
 
     def slug
       @card = Card.find(params[:id])
-      render json: @card.generate_slug
+      render json: @card.send(:generate_slug)
     end
 
     private

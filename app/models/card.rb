@@ -26,6 +26,7 @@ class Card < ActiveRecord::Base
   validates_format_of :recipient_name, with: /.*\w+.*/
   validates :amount, numericality: { greater_than_or_equal_to: 10 }
   validates :card_designs_id, numericality: true
+
   before_save :generate_slug
 
   private
@@ -33,16 +34,20 @@ class Card < ActiveRecord::Base
   def generate_slug
     new_slug = ""
     begin
-      until random_ids ||= nil && random_ids.length == 3
-        random_ids = [rand(2048), rand(2048), rand(2048)].uniq
-      end
-      File.open(Rails.root + "lib/dict.txt") do |f|
-        f.each_line.with_index do |line, i|
-          new_slug << line.strip.capitalize if random_ids.include?(i)
-        end
+      random_ids = generate_ids
+      dict = File.readlines(Rails.root + "lib/dict.txt")
+      random_ids.each do |id|
+        new_slug << dict[id].strip.capitalize
       end
     end unless Card.exists?(slug: new_slug)
     self.slug = new_slug
+  end
+
+  def generate_ids
+    random_ids = []
+    until random_ids.length == 3
+      random_ids = [rand(2048), rand(2048), rand(2048)].uniq
+    end
   end
 
   def generate_pass
