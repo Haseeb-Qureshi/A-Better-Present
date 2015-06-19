@@ -30,6 +30,10 @@ class Card < ActiveRecord::Base
   before_save :ensure_slug
   before_save :ensure_pass
 
+  state_machine initial: :draft do
+    # stuff goes here
+  end
+
   private
 
   def ensure_pass
