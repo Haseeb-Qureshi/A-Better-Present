@@ -16,6 +16,7 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
     "": "home",
     "options": "options",
     "compose": "compose",
+    "payment": "payment",
   },
 
   home: function () {
@@ -28,5 +29,9 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
 
   compose: function () {
     this.rootView.renderCompose();
+  },
+
+  payment: function () {
+    this.rootView.renderPayment();
   },
 });

@@ -1,9 +1,11 @@
 <div class="col-md-5 col-md-offset-1">
-  <h3>Send your message!</h3>
+  <h3 class="shadowed">Craft your message!</h3>
   <textarea id="redactor">
-    <p>My dearest <%= card.get("recipient_name") %>. I wanted to share this with you. I hope you enjoy it.</p>
+    <p><h4><%= card.get("recipient_name") %>!</h4></p>
+
+    <p>I am now going to ask you a favor which sounds quite crazy, and which I should regard as such, were I the one to receive the letter. It is also the very greatest test that even the kindest person could be put to. Well, this is it:</p>
+
+    <p>Write to me only once a week, so that your letter arrives on Sunday—for I cannot endure your daily letters, I am incapable of enduring them. For instance, I answer one of your letters, then lie in bed in apparent calm, but my heart beats through my entire body and is conscious only of you. I belong to you; there is really no other way of expressing it, and that is not strong enough. But for this very reason I don’t want to know what you are wearing; it confuses me so much that I cannot deal with life; and that’s why I don’t want to know that you are fond of me. If I did, how could I, fool that I am, go on sitting in my office, or here at home, instead of leaping onto a train with my eyes shut and opening them only when I am with you?...</p>
   </textarea>
-</div>
-<div class="col-md-3 col-md-offset-1">
-  <button class="btn-xl btn-present center-block" id="next">Finalize</button>
+  <button class="btn-xl btn-present center-block voffset6" id="next">Finalize</button>
 </div>

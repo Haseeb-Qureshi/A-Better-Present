@@ -3,7 +3,7 @@ ABetterPresent.Views.ComposeView = Backbone.CompositeView.extend({
   template: JST['compose'],
 
   events: {
-    "click button": "printThings",
+    "click button": "goToNext",
   },
 
   render: function () {
@@ -12,7 +12,7 @@ ABetterPresent.Views.ComposeView = Backbone.CompositeView.extend({
     return this;
   },
 
-  printThings: function () {
-    console.log(this.$('#redactor').redactor('code.get'));
+  goToNext: function () {
+    Backbone.history.navigate("payment", { trigger: true });
   },
 });
