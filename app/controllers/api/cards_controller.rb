@@ -14,6 +14,7 @@ module Api
     def show
       @card = Card.where(id: params[:id]).includes(:charities).first
       if @card.user == current_user
+        @card.save
         render json: @card
       else
         render json: "Not authorized", status: 402

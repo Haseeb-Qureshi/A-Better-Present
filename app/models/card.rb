@@ -27,9 +27,18 @@ class Card < ActiveRecord::Base
   validates :amount, numericality: { greater_than_or_equal_to: 10 }
   validates :card_designs_id, numericality: true
 
-  before_save :generate_slug
+  before_save :ensure_slug
+  before_save :ensure_pass
 
   private
+
+  def ensure_pass
+    self.pass ||= generate_pass
+  end
+
+  def ensure_slug
+    self.slug ||= generate_slug
+  end
 
   def generate_slug
     new_slug = ""
@@ -40,7 +49,7 @@ class Card < ActiveRecord::Base
         new_slug << dict[id].strip.capitalize
       end
     end unless Card.exists?(slug: new_slug)
-    self.slug = new_slug
+    new_slug
   end
 
   def generate_ids
@@ -48,6 +57,7 @@ class Card < ActiveRecord::Base
     until random_ids.length == 3
       random_ids = [rand(2048), rand(2048), rand(2048)].uniq
     end
+    random_ids
   end
 
   def generate_pass
