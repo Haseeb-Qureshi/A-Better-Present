@@ -7,7 +7,9 @@
 }
 
 .spinner > div {
-  background-color: #fff;
+  background-color: white;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.3);
+
   height: 100%;
   width: 6px;
   display: inline-block;

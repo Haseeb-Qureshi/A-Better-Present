@@ -4,6 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  user_id         :integer
+#  card_designs_id :integer
 #  sender_name     :string
 #  recipient_name  :string
 #  pass            :string
@@ -12,7 +13,6 @@
 #  paid_at         :datetime
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  card_designs_id :integer
 #
 
 class Card < ActiveRecord::Base

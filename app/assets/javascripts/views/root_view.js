@@ -26,8 +26,8 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
     this._swapView(new ABetterPresent.Views.PaymentView());
   },
 
-  renderSuccess: function () {
-
+  renderSuccess: function (card) {
+    this._swapView(new ABetterPresent.Views.SuccessView({ model: card }));
   },
 
   render: function () {
