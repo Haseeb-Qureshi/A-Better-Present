@@ -18,7 +18,9 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
   },
 
   renderLogIn: function () {
-    this._swapView(new ABetterPresent.Views.LogInView());
+    this._swapView(new ABetterPresent.Views.LogInView({
+      model: new ABetterPresent.Models.UserSession(),
+    }));
   },
 
   renderOptions: function () {
