@@ -14,6 +14,8 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "home",
+    "sign_up": "signUp",
+    "log_in": "logIn",
     "options": "options",
     "compose": "compose",
     "payment": "payment",
@@ -22,6 +24,14 @@ ABetterPresent.Routers.Router = Backbone.Router.extend({
 
   home: function () {
     this.rootView.renderHome();
+  },
+
+  signUp: function () {
+    this.rootView.renderSignUp();
+  },
+
+  logIn: function () {
+    this.rootView.renderLogIn();
   },
 
   options: function() {

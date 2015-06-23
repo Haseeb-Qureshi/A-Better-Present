@@ -16,6 +16,7 @@ gem 'thin'
 
 gem 'serialize_json-rails'
 gem 'backbone-on-rails'
+gem 'backbone-rails'
 gem 'twitter-bootstrap-rails'
 gem 'state_machine', require: 'state_machine/core'
 gem 'redactor-rails'

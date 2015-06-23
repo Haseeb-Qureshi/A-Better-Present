@@ -13,6 +13,14 @@ ABetterPresent.Views.RootView = Backbone.CompositeView.extend({
     this._swapView(new ABetterPresent.Views.HomeView());
   },
 
+  renderSignUp: function () {
+    this._swapView(new ABetterPresent.Views.NewUserView());
+  },
+
+  renderLogIn: function () {
+    this._swapView(new ABetterPresent.Views.LogInView());
+  },
+
   renderOptions: function () {
     var directLoad = !this._currentView; // variable delay to ensure carousel loads properly
     this._swapView(new ABetterPresent.Views.OptionsView({ directLoad: directLoad }));
